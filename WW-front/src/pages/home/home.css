@@ -1,0 +1,24 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.home .title{
+    font-size: 30px;
+    text-shadow:10px 10px 20px black;
+    opacity: 80%;
+    color: white;
+}
+
+.home .text{
+    margin-top:40px;
+    font-size: 20px;
+    text-shadow:10px 10px 20px black;
+    opacity: 70%;
+    color: white;
+}
+  
