@@ -1,7 +1,7 @@
 import express from "express";
 import cors from 'cors'
 
-import routes from './routes'
+import router from './routes'
 import "./database";
 
 class App {
@@ -17,7 +17,7 @@ class App {
     }
 
     routes(){
-        this.server.use(routes)
+        this.server.use(router)
     }
 }
 

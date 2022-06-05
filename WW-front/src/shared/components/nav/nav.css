@@ -1,0 +1,146 @@
+@keyframes navShow {
+    0%{
+        right: -75%;
+    }100%{
+        right: -1%;
+    }
+}
+
+@keyframes navHidden {
+    0%{
+        right: 0;
+    }100%{
+        right: -90%;
+    }
+}
+
+hr{
+    width: 108%;
+    margin: 7px 0;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: #5f5f5f;
+}:hover{
+    color: black;
+}
+
+.nav-bar{
+    background-image: linear-gradient(150deg, #5783c6, #2d5085 25% );
+    width: 100.5%;
+    padding: 9px 13px;
+    min-height: 50px;
+    max-height: 70px;
+    box-shadow: -0px 3px 16px 3px rgba(0, 0, 0, 0.77);
+}
+
+.nav-bar .nav-buttons {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.nav-bar .logo{
+    width: 60px;
+    height: 50px;
+}
+
+.nav-bar .nav-buttons .menu{
+    background: none;
+    border: none;
+    outline: none;
+    width: 50px;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .icon-img{
+    width: 100%;
+}
+
+.nav-bar .navigation{
+    position: absolute;
+    padding: 15px;
+    border-radius: .3rem 0 0 .3rem;
+    width: 25%;
+    right: -1%;
+    margin-top: 1.5rem;
+    background-color: #e3e3e3;
+    box-shadow: 2px 3px 6px black;
+}
+
+.active{
+    animation: navShow 1s normal both;
+}
+
+.inactive{
+    animation: navHidden 1s normal both;
+}
+
+.nav-bar .navigation .nav-items{
+    list-style: none;
+}
+
+.nav-bar .navigation .nav-items .title{
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.nav-bar .navigation .nav-items .item{
+    background-color: rgba(0, 0, 0, 0.111);
+    display: flex;
+    padding: 5px;
+    font-size: 14px;
+    margin: 0 10px;
+    text-transform: uppercase;
+    box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.268);
+    border-radius: .3rem;
+    margin: 14px 0px;
+}
+
+@media screen and (max-width: 768px) {
+    .nav-bar{
+        height: 50px;
+        padding: 9px;
+    }
+
+    .nav-bar .logo {
+        width: 40px;
+    }
+
+    .nav-bar .nav-buttons .menu {
+        width: 35px;
+        margin-right: 0;
+    }
+
+    .nav-bar .navigation{
+        width: 60%;
+    }
+
+    .nav-bar .navigation .nav-items .title{
+        font-size: 14px;
+    }
+
+    .nav-bar .navigation .nav-items .item{
+        padding: 8px 7px;
+        width: 109%;
+        font-size: 12px;
+    }a{
+        color: black;
+    } label {
+        margin: 0 3px;
+    }
+
+    .inactive{
+        animation: none;
+        visibility: hidden;
+    }
+   
+}

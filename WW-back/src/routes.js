@@ -1,9 +1,18 @@
 import { Router } from "express";
 
 import HelloController from "./controllers/HelloController";
+import UserController from './controllers/UserControllers'
+import { auth, adm } from "./middlewares/auth";
 
-const routes = new Router()
+const router = new Router()
 
-routes.get('/hello', HelloController.hello)
+router.post('/user/register', UserController.register)
+router.post('/user/login', UserController.login)
 
-export default routes
+router.use(auth)
+router.use(adm)
+
+router.get('/hello', HelloController.hello)
+
+
+export default router
