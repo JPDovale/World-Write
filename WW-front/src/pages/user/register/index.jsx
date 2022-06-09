@@ -1,4 +1,3 @@
-import './register.css'
 import React, {useState, useEffect, useContext} from 'react'
 import {Link, useNavigate} from 'react-router-dom'
 
@@ -61,7 +60,7 @@ export default function Register(){
                 className='form'
                 onSubmit={handleRegister}
             >
-                <img src='../assets/logo.png' alt='logo'/>
+                <img src='../assets/logo2.png' alt='logo'/>
                 <label>Registro</label>
 
                 <div className='content-input'>

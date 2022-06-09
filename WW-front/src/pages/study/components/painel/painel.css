@@ -1,0 +1,137 @@
+.painel{
+    background-image: linear-gradient(177deg,  #111316 , #343636 );
+    padding: 10px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: -0px 3px 16px 3px rgba(0, 0, 0, 0.77);
+}
+
+.painel .title{
+    color: white;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 18px rgba(4, 168, 133, 0.539);
+}
+
+.add-subject{
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.form-subject{
+    position: relative;
+    background-image: linear-gradient(177deg,  #111316 , #343636 );
+    padding:  25px;
+}
+
+.form-subject .lesson{
+    background-color: rgba(255, 255, 255, 0.22);
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.153);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 13px;
+    padding: 5px 7px;
+    border-radius: .3rem;
+}
+
+.form-subject .close-subject{
+    border: none;
+    position: absolute;
+    padding: 3px;
+    left: 45px;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 8px;
+    background-color: rgb(209, 45, 45);
+    color: white;
+}
+
+.form-subject .subject-inputs{
+    padding: 20px ;
+    border: 1px solid rgba(4, 168, 133, 0.23);
+    border-radius: .3rem;
+    box-shadow: -0px 3px 16px 3px rgba(0, 0, 0, 0.77);
+}
+
+.form-subject .subject-inputs label{
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+    text-shadow: 1px 1px 18px rgba(4, 168, 133, 0.539);
+
+}
+
+.form-subject .subject-inputs .finish-button{
+    border: none;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: .3rem;
+    width: 100%;
+    background-color: rgba(4, 168, 133, 0.539);
+    font-size: 10px;
+    outline: none;
+    
+}
+
+.form-subject .subject-inputs .hidden{
+    display: none;
+}
+
+.form-subject .subject-inputs .input{
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-subject .subject-inputs .input input{
+    border: none;
+    margin-top: 8px;
+    padding: 4px;
+    border-radius: .3rem;
+    outline: none;
+}
+
+.form-subject .add-matter{
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+.form-subject .painel-matter{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.form-subject .painel-matter h6{
+    text-transform: uppercase;
+    font-size: 11px;
+    color: white;
+    text-shadow: 1px 1px 18px rgba(4, 168, 133, 0.539);
+}
+
+.inactive{
+    display: none;
+}
+.active{
+    margin-top: 20px ;
+}

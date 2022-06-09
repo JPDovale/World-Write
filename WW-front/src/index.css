@@ -8,13 +8,43 @@ a{
   text-decoration: none;
 }
 
+@keyframes background-animation {
+  0%{
+      background-position: 0%;
+  }25%{
+      background-position: 50%;
+  }50%{
+      background-position: 100%;
+  }75%{
+      background-position: 50%;
+  }100%{
+      background-position: 0%;
+  }
+}
+
+
 body {
   margin: 0;
+  background-image: linear-gradient(45deg, #122035, #0487d1, #3f59de,#ccb);
+  background-size: 500%;
+  background-repeat: no-repeat;
+  animation: background-animation  60s infinite;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar{
+  width: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.249);
+  background-image: linear-gradient(45deg, #122035, #0487d1,#122035);}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #ffffff57;
+  border-radius: 6px;
+  border: 1px solid rgba(207, 207, 196, 0.381);
 }
 
 code {
@@ -33,3 +63,5 @@ code {
     text-transform: uppercase;
     color: white;
 }
+
+

@@ -1,32 +1,42 @@
 import './nav.css'
 import {Link} from 'react-router-dom'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+
+import {AuthContext} from '../../services/authContext'
 
 export default function Nav(props){
+    const {logout} = useContext(AuthContext)
+
     const [isActive, setIsActive] = useState(false)
+
+    function handleLogout(){
+        logout()
+    }
     
     return(
         <div className='nav-bar'>
             <div className='nav-buttons'>
-                <div className='logo'>
-                    <Link to={'/'}>
-                        <img 
-                            src='../assets/worldPng.png'
+                <div className='nav-buttons-logo-menu'>
+                    <button 
+                        className='menu'
+                        onClick={()=>setIsActive(!isActive)}
+                    >
+                        <img
+                            src='../assets/menu.png'
                             className='icon-img'
-                            alt='logo'
+                            alt='menu'
                         />
-                    </Link>
+                    </button>
+                    <div className='logo'>
+                        <Link to={'/'}>
+                            <img 
+                                src='../assets/logo2.png'
+                                className='icon-img'
+                                alt='logo'
+                            />
+                        </Link>
+                    </div>
                 </div>
-                <button 
-                    className='menu'
-                    onClick={()=>setIsActive(!isActive)}
-                >
-                    <img
-                        src='../assets/menu.png'
-                        className='icon-img'
-                        alt='menu'
-                    />
-                </button>
             </div>
             <nav className={`navigation ${isActive ? 'active' : 'inactive'}`}>
                 <ul className='nav-items'>
@@ -39,6 +49,9 @@ export default function Nav(props){
                     </li>
                     <hr />
                     <h4 className='title'>Usuário</h4>
+                    <li>
+                        <Link className='item' to={'/login'} onClick={()=>{handleLogout()}}><label>Sair</label></Link>
+                    </li>
                 </ul>
             </nav>
         </div>

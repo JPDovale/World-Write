@@ -16,9 +16,8 @@ export function AuthProvider({children}){
 
         if(recoveredUser && token){
             setUser(JSON.parse(recoveredUser))
-            api.defaults.headers.authorization = `Bearer ${token}`
+            api.defaults.headers.Authorization = `Bearer ${token}`
         }
-
         setLoading(false)
     },[])
 
@@ -30,7 +29,6 @@ export function AuthProvider({children}){
         if(!registeredUser) {
             return alert('não foi possível criar o seu usuário')
         }else{
-            console.log(registeredUser)
             navigate('/login')
         }
     }
@@ -39,7 +37,7 @@ export function AuthProvider({children}){
         const res = await loginRequest(email, password)
         const token = res.data.authorization
         const loggedUser = {
-            id: res.data.user._id,
+            idFire: res.data.user.idFire,
             email: res.data.user.email,
             ADM: res.data.user.ADM,
             todo: res.data.user.todo,
@@ -52,10 +50,10 @@ export function AuthProvider({children}){
         localStorage.setItem('user', JSON.stringify(loggedUser))
         localStorage.setItem('token', token)
 
-        api.defaults.headers.authorization = `Bearer ${token}`
+        api.defaults.headers.Authorization = `Bearer ${token}`
 
         setUser(loggedUser)
-        navigate('/')
+        navigate(`/`)
     }
 
     function logout(){
@@ -65,7 +63,7 @@ export function AuthProvider({children}){
         localStorage.removeItem('user')
         localStorage.removeItem('token')
 
-        api.defaults.headers.authorization = null
+        api.defaults.headers.Authorization = null
 
         navigate('/login')
     }

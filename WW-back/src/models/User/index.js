@@ -6,8 +6,7 @@ const userSchema = new mongoose.Schema(
         email: {type:String, required:true, minlenght:6, maxlenght:100},
         password: {type:String, required:true, minlenght:8, maxlenght:30},
         ADM: {type:Boolean, default:false},
-        projects: [],
-        todo: [],
+        idFire:{type:String, default: Math.random()*100*100*100*100*100}
     },
     {
         timestamps: true

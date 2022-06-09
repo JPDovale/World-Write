@@ -4,13 +4,16 @@
     box-sizing: border-box;
 }
 
+
 .content{
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(177deg,  #11131669 , #343636da );
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(180deg, #012d45 60%, #24406a);
-    height: 100vh;
 }
 
 .content .form{
@@ -28,6 +31,7 @@
     font-size: 16px;
     margin-bottom: 15px;
     color: #bdbda7;
+    text-shadow: 1px 1px 18px rgb(4, 168, 132);
 }
 
 .content .form  img{
@@ -60,7 +64,7 @@
     border: none;
     outline: none;
     border-radius: .3rem;
-    box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 0.378);
+    box-shadow: 1px 1px 25px rgba(4, 168, 133, 0.489);
 }
 
 
@@ -70,7 +74,7 @@
     margin-top: 30px;
     border-radius: .3rem;
     border: none;
-    box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 0.378);
+    box-shadow: 1px 1px 25px rgba(4, 168, 133, 0.489);
     font-size: 13px;
 }
 
@@ -109,6 +113,10 @@
     }
 
     .register{
+        width: 100%;
+    }
+
+    .login{
         width: 100%;
     }
 }

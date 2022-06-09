@@ -1,21 +1,21 @@
 @keyframes navShow {
     0%{
-        right: -75%;
+        left: -75%;
     }100%{
-        right: -1%;
+        left: -1%;
     }
 }
 
 @keyframes navHidden {
     0%{
-        right: 0;
+        left: 0;
     }100%{
-        right: -90%;
+        left: -90%;
     }
 }
 
-hr{
-    width: 108%;
+.nav-bar hr{
+    width: 100%;
     margin: 7px 0;
 }
 
@@ -23,16 +23,13 @@ body{
     overflow-x: hidden;
 }
 
-a{
-    text-decoration: none;
-    color: #5f5f5f;
-}:hover{
-    color: black;
-}
 
 .nav-bar{
-    background-image: linear-gradient(150deg, #5783c6, #2d5085 25% );
+    position: fixed;
+    top: 0;
+    background-image: linear-gradient(177deg,  #111316 , #343636 );
     width: 100.5%;
+    z-index: 1;
     padding: 9px 13px;
     min-height: 50px;
     max-height: 70px;
@@ -47,15 +44,19 @@ a{
 }
 
 .nav-bar .logo{
-    width: 60px;
-    height: 50px;
+    width: 50px;
+}
+
+.nav-bar .nav-buttons .nav-buttons-logo-menu{
+    display: flex;
+    gap: 10px;
 }
 
 .nav-bar .nav-buttons .menu{
     background: none;
     border: none;
     outline: none;
-    width: 50px;
+    width: 30px;
     margin-right: 6px;
     display: flex;
     align-items: center;
@@ -68,19 +69,21 @@ a{
 .nav-bar .navigation{
     position: absolute;
     padding: 15px;
-    border-radius: .3rem 0 0 .3rem;
+    border-radius:  0 .3rem .3rem 0;
     width: 25%;
-    right: -1%;
+    left: -1%;
     margin-top: 1.5rem;
-    background-color: #e3e3e3;
+    color: white;
+    background-color: #111316;
     box-shadow: 2px 3px 6px black;
+    z-index: 1;
 }
 
-.active{
+.nav-bar .active{
     animation: navShow 1s normal both;
 }
 
-.inactive{
+.nav-bar .inactive{
     animation: navHidden 1s normal both;
 }
 
@@ -94,15 +97,21 @@ a{
 }
 
 .nav-bar .navigation .nav-items .item{
-    background-color: rgba(0, 0, 0, 0.111);
+    background-color: rgba(255, 255, 255, 0.157);
+    text-decoration: none;
+    transition: 500ms;
+    color: rgba(255, 255, 255, 0.534);
     display: flex;
     padding: 5px;
     font-size: 14px;
-    margin: 0 10px;
     text-transform: uppercase;
     box-shadow: inset 2px 3px 3px rgba(0, 0, 0, 0.268);
     border-radius: .3rem;
-    margin: 14px 0px;
+    margin: 14px 0px 14px 10px;
+}
+
+.nav-bar .navigation .nav-items .item:hover{
+    color: rgb(255, 255, 255);
 }
 
 @media screen and (max-width: 768px) {
@@ -128,9 +137,14 @@ a{
         font-size: 14px;
     }
 
+    .nav-bar .navigation .nav-items {
+        margin-right: 20px;
+    }
+   
+
     .nav-bar .navigation .nav-items .item{
-        padding: 8px 7px;
-        width: 109%;
+        padding: 8px 9px;
+        width: 100%;
         font-size: 12px;
     }a{
         color: black;
@@ -138,7 +152,7 @@ a{
         margin: 0 3px;
     }
 
-    .inactive{
+    .nav-bar .inactive{
         animation: none;
         visibility: hidden;
     }

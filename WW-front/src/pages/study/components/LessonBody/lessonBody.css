@@ -1,0 +1,39 @@
+.body-info .form{
+    display: flex;
+    flex-direction: column;
+}
+
+.body-info .form button{
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    background-color: rgb(101, 199, 101);
+    margin-top: 5px;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 10px;
+    padding: 3px;
+}
+
+.body-info .lesson-card{
+    font-size: 13px;
+    background-color: rgba(0, 0, 0, 0.796);
+    box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.909);
+    padding: 10px 10px;
+    border-radius: .3rem;
+   
+}
+
+.body-info .lesson-card p{
+    color: white;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.body-info .lesson-card h6{
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+}

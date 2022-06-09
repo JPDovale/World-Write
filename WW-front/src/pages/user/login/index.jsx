@@ -50,7 +50,7 @@ export default function Login(){
                 className='form'
                 onSubmit={handleLogin}
             >
-                <img src='../assets/logo.png' alt='logo'/>
+                <img src='../assets/logo2.png' alt='logo'/>
                 <label>Login</label>
 
                 <div className='content-input'>
