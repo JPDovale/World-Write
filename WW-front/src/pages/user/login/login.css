@@ -9,7 +9,7 @@
     top: 0;
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(177deg,  #11131669 , #343636da );
+    background-image: linear-gradient(177deg,  #11131684 , #343636e4 );
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,9 +34,18 @@
     text-shadow: 1px 1px 18px rgb(4, 168, 132);
 }
 
+.content .form .err{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #bdbda7;
+    text-shadow: 1px 1px 8px rgb(4, 168, 132);
+    transition: 1s;
+}
+
 .content .form  img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
 }
 
 .content .form .content-buttons{
@@ -61,6 +70,8 @@
 
 .content .form .content-input .input{
     padding: 5px 6px;
+    background-color: #111316;
+    color: white;
     border: none;
     outline: none;
     border-radius: .3rem;
@@ -69,19 +80,22 @@
 
 
 .content .form .content-submit{
-    padding: 5px 20px;
+    padding: 7px 24px;
     text-transform: uppercase;
     margin-top: 30px;
     border-radius: .3rem;
     border: none;
+    background-color: #111316;
+    color: white;
     box-shadow: 1px 1px 25px rgba(4, 168, 133, 0.489);
-    font-size: 13px;
+    font-size: 11px;
+    transition: 1s;
 }
 
-.content .form .content-submit .submit{
-    text-transform: uppercase;
-    outline: none;
-    border: none;
+.content .form .content-submit:hover{
+    background-color: #111316c7;
+    color: #ffffff66;
+    box-shadow: 1px 1px 25px 3px rgba(15, 253, 202, 0.489);
 }
 
 

@@ -11,7 +11,7 @@ class UserController {
         const userExiste = await User.findOne({email:email})
 
         if(userExiste){
-            return(res.json({msg: 'Usuário já existente'}))
+            return(res.json({msg: 'Usuário já existente, tente fazer login'}))
         }
         else{
             const encryptedPassword = await createPasswordHash(password)

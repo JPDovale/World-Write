@@ -1,0 +1,36 @@
+.container-footer{
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(177deg,  #111316 , #343636 );
+}
+
+.container-footer .social-midias{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-footer .social-midias .title{
+    text-transform: uppercase;
+    text-shadow: 1px 1px 8px rgb(4, 168, 132);
+    font-size: 14px;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 10px;
+
+}
+
+.container-footer .social-midias .social-midias-logos{
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-footer .social-midias .social-midias-logos .logo{
+    width: 40px;
+}
+
+.container-footer .social-midias .social-midias-logos .logo img{
+    width:100%;
+}

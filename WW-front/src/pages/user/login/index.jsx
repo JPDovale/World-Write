@@ -6,10 +6,12 @@ import {AuthContext} from "../../../shared/services/authContext"
 
 export default function Login(){
     const navigate = useNavigate()
-    const {authenticated, login} = useContext(AuthContext)
+    const {authenticated, err, login} = useContext(AuthContext)
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+
+    
     const [loading, setLoading] = useState(true)
    
     setTimeout(() => {
@@ -32,6 +34,7 @@ export default function Login(){
             alert("Preencha os campos de login")
         }else{
             login(email, password)
+            
         }
     }
 
@@ -52,7 +55,7 @@ export default function Login(){
             >
                 <img src='../assets/logo2.png' alt='logo'/>
                 <label>Login</label>
-
+                <div className='err'>{err? err.msg : ''}</div>
                 <div className='content-input'>
                     <label> Email </label>
                     <input 
@@ -73,14 +76,10 @@ export default function Login(){
                 </div>
                 <div className='content-buttons'>
                     <button 
+                        type='submit'
                         className='content-submit'
                         onClick={handleLogin}
-                    >
-                        <input 
-                            type="submit" 
-                            className='submit'
-                            onClick={handleLogin}   
-                        />
+                    >Entrar
                     </button>
                     <Link to='/register'>
                         <button className='content-submit register'>

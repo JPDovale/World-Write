@@ -6,7 +6,7 @@ import { api } from '../../../shared/api'
 
 export default function Register(){
     const navigate = useNavigate()
-    const {register} = useContext(AuthContext)
+    const {register, err} = useContext(AuthContext)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -15,11 +15,11 @@ export default function Register(){
     const [loading, setLoading] = useState(true)
    
     useEffect(()=>{
-        const recoveredUser = localStorage.getItem('user')
+        const recoveredUser =  localStorage.getItem('user')
         const token = localStorage.getItem('token')
 
         if(recoveredUser && token){
-            api.defaults.headers.authorization = `Bearer ${token}`
+            api.defaults.headers.Authorization = `Bearer ${token}`
             navigate('/')
         }
 
@@ -27,7 +27,6 @@ export default function Register(){
             navigate('/login')
         }
         
-
         setLoading(false)
     },[])
 
@@ -38,7 +37,7 @@ export default function Register(){
             return alert("Preencha todos os campos de registro")
         }
 
-        if(password != confirmPassword){
+        if(password !== confirmPassword){
             alert('as senhas não conferem')
         }else{
             register(name, email, password)
@@ -62,7 +61,7 @@ export default function Register(){
             >
                 <img src='../assets/logo2.png' alt='logo'/>
                 <label>Registro</label>
-
+                <div className='err'>{err? err.msg : ''}</div>
                 <div className='content-input'>
                     <label> Nome </label>
                     <input 
@@ -100,11 +99,8 @@ export default function Register(){
                     />
                 </div>
                 <div className='content-buttons'>
-                    <button className='content-submit'>
-                        <input 
-                            type="submit" 
-                            className='submit'   
-                        />
+                    <button type='submit' className='content-submit'>
+                        Registrar
                     </button>
                     <Link to='/login'>
                         <button className='content-submit login'>

@@ -11,12 +11,6 @@ export default function Study(){
     const [nameLesson, setNameLesson] = useState('')
     
 
-    if(loading){
-        return(
-            <div className='loading'>CARREGANDO...</div>
-        )
-    }
-
     if(!subjects[0]){
         return(
             <section className='container'>
@@ -37,8 +31,9 @@ export default function Study(){
     }
 
     return(
-        <section className='container'>
+        <section className='container-study'>
             <Painel/>
+            <div className={loading? 'loading-data-subject' : 'loaded'}></div>
             <div className='card-container'>{
                 subjects.map(subject=>
                     <div 
@@ -49,6 +44,7 @@ export default function Study(){
                         <h5 className='title'>{subject.subject}</h5>
                        
                         <div className='card-body'>
+                            
                         <h6>Assuntos:</h6>
                             {
                                 subject.matters.map(matter=>

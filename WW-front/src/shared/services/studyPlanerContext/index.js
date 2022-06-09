@@ -27,26 +27,32 @@ export function StudyPlanerProvider({children}){
     },[user])
 
     async function packStudyPlaner(nameSubject, lessons){
+        setLoading(true)
         const subjectPack = {
             subject: nameSubject,
             matters: lessons.map(lesson=>{return {lesson:lesson.lesson, idFire:lesson.idFire, complete:lesson.complete}}),
         }
         await addStudyPlaner(subjectPack, user.idFire)
         getPlaners()
+        setLoading(false)
     }
 
     async function getPlaners(){
+        setLoading(true)
         const reqSubjects = await getStudyPlaner(user.idFire)
         setSubjects(reqSubjects.data)
         setLoading(false)
     }
 
     async function removeStudyPlaner(idFire){
+        setLoading(true)
         await deleteStudyPlaner(idFire)
         getPlaners()
+        setLoading(false)
     }
 
     async function updateMatter(matter, subject){
+        setLoading(true)
         const updateMatter = {
             lesson: matter.lesson,
             complete: !matter.complete,
@@ -67,9 +73,11 @@ export function StudyPlanerProvider({children}){
 
         await updateMatterStudyPlaner(subject.idFire, updatedSubjectPack)
         getPlaners()
+        setLoading(false)
     }
 
     async function deleteMatter(matter, subject){
+        setLoading(true)
         const filtrateMatters = subject.matters.filter(mat=>  mat.idFire !== matter.idFire)
 
         const updatedSubjectPack = {
@@ -81,12 +89,15 @@ export function StudyPlanerProvider({children}){
 
         await updateMatterStudyPlaner(subject.idFire, updatedSubjectPack)
         getPlaners()
+        setLoading(false)
     }
 
     async function getMatter(idFire){
+        setLoading(true)
         await getPlaners()
         const matter = subjects.filter(sub=> sub.idFire === idFire)
         setSubject(...matter)
+        setLoading(false)
     }
     
     return(

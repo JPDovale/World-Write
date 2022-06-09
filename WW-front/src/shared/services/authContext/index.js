@@ -8,6 +8,7 @@ export const AuthContext = createContext()
 export function AuthProvider({children}){
     const navigate = useNavigate()
     const [user, setUser] = useState(null)
+    const [err, setErr] = useState({})
     const [loading, setLoading] = useState(true)
 
     useEffect(()=>{
@@ -24,17 +25,26 @@ export function AuthProvider({children}){
     async function register (name, email, password){
         const res = await registerRequest(name, email, password)
 
+        if(res.data.msg){ 
+            navigate('/login')
+            return setErr(res.data)
+        }
+
         const registeredUser = res.data
 
         if(!registeredUser) {
             return alert('não foi possível criar o seu usuário')
         }else{
             navigate('/login')
+            setErr({})
         }
     }
 
     async function login (email, password){
         const res = await loginRequest(email, password)
+
+        if(res.data.msg) return setErr(res.data)
+
         const token = res.data.authorization
         const loggedUser = {
             idFire: res.data.user.idFire,
@@ -45,14 +55,13 @@ export function AuthProvider({children}){
             name: res.data.user.name
         }
 
-        if(!loggedUser) return alert('houve um erro')
-
         localStorage.setItem('user', JSON.stringify(loggedUser))
         localStorage.setItem('token', token)
 
         api.defaults.headers.Authorization = `Bearer ${token}`
 
         setUser(loggedUser)
+        setErr({})
         navigate(`/`)
     }
 
@@ -69,7 +78,7 @@ export function AuthProvider({children}){
     }
 
     return(
-        <AuthContext.Provider value={{authenticated: !!user, user, loading, register, login, logout}}>
+        <AuthContext.Provider value={{authenticated: !!user, user, loading, err, register, login, logout}}>
             {children}
         </AuthContext.Provider>
     )
